@@ -11,7 +11,6 @@ use reservation;
 -- Structure de la table `admin`
 --
 
-DROP TABLE IF EXISTS `jeu`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(11) ,
   `login` varchar(30),

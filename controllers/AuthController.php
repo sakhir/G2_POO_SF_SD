@@ -11,8 +11,9 @@ class AuthController extends Controller
 
         if (isset($_POST['connecter'])) {
             extract($_POST);
-            Validations::isEmpty($login, 'login', 'login obligatoire');
-            Validations::isEmpty($password, 'password', 'password obligatoire');
+            Validations::isEmpty($login, 'login', 'le login est  obligatoire');
+            Validations::isEmpty($password, 'password', 'le password est obligatoire');
+
 
             if (Validations::isValid()) {
                 $admin  = new AdminManager();
@@ -21,18 +22,27 @@ class AuthController extends Controller
                     Session::set('admin', $this->adminExiste);
                     $this->redirect('etudiant/index');
                 } else {
-                    echo "unknow";
+                    $this->data['err']="Utilisateur inexistant";
+                    $this->view("auth/login",$this->data);
+
                 }
             } else {
 
-                var_dump(Validations::getErrors());
-                echo "champs vide";
+                //var_dump(Validations::getErrors());
+                $this->data['error']=Validations::getErrors();
+                 $this->view("auth/login",$this->data);
+              /*  var_dump($this->data);
+                echo "champs vide";*/
             }
-        } else {
+        } else 
+        {
+
+        $this->view("auth/login");
+
         }
 
 
-        $this->view("auth/login");
+        
     }
 
     public function logout()

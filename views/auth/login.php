@@ -1,16 +1,4 @@
-<!-- <h1 class="text-center mt-5">Se connecter modif</h1>
-<form class="form-signin col-6 offset-3" method="POST">
-    <label for="login" class="sr-only">Login</label>
-    <input type="text" id="login" class="form-control" placeholder="Login"
-        required autofocus name="login">
-    <label for="password" class="sr-only">Password</label>
-    <input type="password" id="password" class="form-control"
-        placeholder="Password" name="password" required>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block mt-3" type="submit"
-        name="connecter">Sign
-        in</button>
-</form> -->
+
     <?php 
      $link_connection="public/css/connexion.css";
      $link_conn="public/css/util.css";
@@ -50,16 +38,20 @@
                 <form class="login100-form p-l-55 p-r-55 p-t-50" method="post" id="connform" action="">
         
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-                        <input class="input100" type="text" name="login" placeholder="Login" id="log" required>
+                        <input class="input100" type="text" name="login" placeholder="Login" id="log" >
                         <span class="focus-input100"></span>
+                        
                     </div>
+                    <span class="text-danger"> <?=@$error['login']?></span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Please enter password">
-                        <input class="input100" type="password" name="password" placeholder="Password" id="pwd" required>
+                        <input class="input100" type="password" name="password" placeholder="Password" id="pwd" >
                         <span class="focus-input100"></span>
+                       
 
                     </div>
-                    <div id="response"></div>
+                     <span class="text-danger"> <?=@$error['password']?></span>
+                    <div class="text-danger"><?=@$data['err']?></div>
                          
 
                     <div class="container-login100-form-btn">

@@ -20,4 +20,5 @@ class Validations
             self::$errors[$key] = $value;
         }
     }
+    
 }
