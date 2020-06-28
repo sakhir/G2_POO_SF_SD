@@ -20,7 +20,7 @@ class AuthController extends Controller
                 $this->adminExiste = $admin->findByLoginAndPwd($login, $password);
                 if ($this->adminExiste) {
                     Session::set('admin', $this->adminExiste);
-                    $this->redirect('etudiant/index');
+                    $this->redirect('etudiant/enregistreretudiant');
                 } else {
                     $this->data['err']="Utilisateur inexistant";
                     $this->view("auth/login",$this->data);
