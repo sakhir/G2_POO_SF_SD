@@ -4,7 +4,7 @@ class Chambre
 {
     private $numero;
     private $numerobat;
-    private $type;
+    private $typ;
 
     public function __construct($data = [])
     {
@@ -64,9 +64,9 @@ class Chambre
            /**
      * Get the value of numero
      */
-    public function getType()
+    public function getTyp()
     {
-        return $this->type;
+        return $this->typ;
     }
 
     /**
@@ -74,9 +74,9 @@ class Chambre
      *
      * @return  self
      */
-    public function setType($type)
+    public function setTyp($typ)
     {
-        $this->type = $type;
+        $this->typ = $typ;
 
         return $this;
     }

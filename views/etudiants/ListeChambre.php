@@ -16,7 +16,7 @@
     <tr>
                 <td><?php echo $cham->getNumero(); ?></td>
                 <td><?php echo $cham->getNumerobat(); ?></td>
-                <td><?php echo $cham->getType(); ?></td>
+                <td><?php echo $cham->getTyp(); ?></td>
                 <td><a href="#"?numero=<?php echo $cham->getNumero(); ?> class="btn btn-success">Modifier</a>
                 <a href="#"?numero=<?php echo $cham->getNumero()?> class="btn btn-danger" > Supprimer</a></td>
     </tr>

@@ -42,9 +42,46 @@ class EtudiantController extends Controller
         
     }
 
-    public function liste()
-    {
-        echo "Liste ";
+    public function AddChambre()
+    { 
+        
+        if (isset($_POST["ajouterc"])) {
+            extract($_POST);
+        // var_dump($_POST);
+         //die();
+         $num=$_POST['numero'];
+         $numb=$_POST['numerobat'];
+         $typ=$_POST['type'];
+         $chambre  = new ChambreManager();
+         $this->data = $chambre->AjouterChambre($num,$numb,$typ);
+         $tab=array($this->data);
+        $this->data=$tab;
+    
+            $this->view('etudiants/index',$this->data);
+        }
+    }
+    
+    public function AddEtudiant()
+    { 
+        
+        if (isset($_POST["ajoutere"])) {
+         
+         $mat=$_POST['matricule'];
+         $no=$_POST['nom'];
+         $pr=$_POST['prenom'];
+         $tel=$_POST['tel'];
+         $email=$_POST['email'];
+         $ddn=$_POST['ddn'];
+
+         $etudiant  = new EtudiantManager();
+         $this->data = $etudiant->AjouterEtudiant($mat,$no,$pr,$email,$tel,$ddn);
+         $tab=array($this->data);
+        /* var_dump($tab);
+         die(); */ 
+        $this->data=$tab;
+    
+            $this->view('etudiants/indexE',$this->data); 
+        }
     }
 
     public function show($id)

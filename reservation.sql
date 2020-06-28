@@ -70,3 +70,4 @@ INSERT INTO `etudiant` (`matricule`, `nom`, `prenom`, `email`, `telephone`, `dat
 ('2018 et nt 0001', 'etudiant', 'etudiant', 'etudiant@gmail.com', 845678484, '2000-06-16');
 INSERT INTO `etudiant` (`matricule`, `nom`, `prenom`, `email`, `telephone`, `date_de_naissance`) VALUES
 ('2018nt0002', 'etudiant1', 'etudiant1', 'etudiant1@gmail.com', 849678484, '2000-06-17');
+

@@ -10,7 +10,7 @@
         crossorigin="anonymous">
        <link rel="stylesheet" type="text/css" href=<?= $link_connection ??  "" ?>>
        <link rel="stylesheet" type="text/css" href=<?= $link_conn ?? ""?> >
-    <title><?= $tiltle ?? "Sa allocation" ?></title>
+    <title><?= $tiltle ?? " allocation" ?></title>
 </head>
 
 <body>

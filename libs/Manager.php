@@ -42,4 +42,12 @@ class Manager
         $this->closePDO();
         return $data;
     }
+
+    
+    public function executeUpdate($sql){
+        $this->pdo=$this->getPDO();
+        $nbreLigne= $this->pdo->exec($sql);
+        $this->closePDO();
+        return $nbreLigne;
+    }
 }

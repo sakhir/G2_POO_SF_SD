@@ -16,4 +16,15 @@ class ChambreManager extends Manager
         }
         return count($data) == 1 ? $data[0] : $data;
     }
+
+    
+    public function AjouterChambre($num,$numbat,$typ)
+    {
+        $sql =" INSERT INTO chambre(numero, numerobat, typ) values('".$num."','".$numbat."','".$typ."');";
+        $result = $this->executeUpdate($sql);
+        if ($result == 0) {
+            return null;
+        }
+        return  $result;
+    }
 }

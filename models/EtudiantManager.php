@@ -15,5 +15,18 @@ class EtudiantManager extends Manager
             return null;
         }
         return count($data) == 1 ? $data[0] : $data;
+        
+    }
+    
+    public function AjouterEtudiant($mat,$nom,$pre,$em,$tel,$ddn)
+    {   
+         
+        $sql =" INSERT INTO etudiant(matricule,nom,prenom,email,telephone,date_de_naissance) VALUES
+        ('".$mat."','".$nom."','".$pre."','".$em."','".$tel."','".$ddn."');";
+        $result = $this->executeUpdate($sql);
+        if ($result == 0) {
+            return null;
+        }
+        return  $result;
     }
 }
