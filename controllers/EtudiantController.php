@@ -84,8 +84,27 @@ class EtudiantController extends Controller
         }
     }
 
-    public function show($id)
-    {
-        echo "id " . $id;
+    public function SupprimerChambre($id)
+    {   
+        
+        $chambre  = new ChambreManager();
+        $this->data = $chambre->SupprimerChambre($id);
+        $tab=array($this->data,$id);
+        $this->data=$tab;
+         $this->view('etudiants/supchambre',$this->data);
+        
+        
+    }
+
+    public function SupprimerEtudiant($id)
+    {   
+        
+        $etudiant  = new EtudiantManager();
+        $this->data = $etudiant->SupprimerEtudiant($id);
+        $tab=array($this->data,$id);
+        $this->data=$tab;
+         $this->view('etudiants/supetudiant',$this->data);
+        
+        
     }
 }

@@ -26,8 +26,8 @@
                 <td><?php echo $etudiant->getEmail(); ?></td>
                 <td><?php echo $etudiant->getTelephone() ?></td>
                 <td><?php echo $etudiant->getDate_de_naissance() ;?></td>
-                <td><a href="#"?matricule=<?php echo $etudiant->getMatricule(); ?> class="btn btn-success">Modifier</a>
-                <a href="#"?matricule=<?php echo $etudiant->getMatricule();?> class="btn btn-danger" > Supprimer</a></td>
+                <td><a href="<?= ROOTURL ?>Etudiant/ModifierEtudiant/<?php echo $etudiant->getMatricule(); ?>" class="btn btn-success">Modifier</a>
+                <a href="<?= ROOTURL ?>Etudiant/SupprimerEtudiant/<?php echo $etudiant->getMatricule(); ?>" class="btn btn-danger" > Supprimer</a></td>
     </tr>
     <?php } ?>
 	</table>

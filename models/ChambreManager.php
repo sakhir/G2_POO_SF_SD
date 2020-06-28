@@ -27,4 +27,14 @@ class ChambreManager extends Manager
         }
         return  $result;
     }
+
+    public function SupprimerChambre($id)
+    {
+        $sql ="  DELETE FROM  chambre WHERE numero='".$id."';";
+        $result = $this->executeUpdate($sql);
+        if ($result == 0) {
+            return null;
+        }
+        return  $result;
+    }
 }
